@@ -94,24 +94,6 @@ function productListing($products,$row){
 }
 
 
-// //update quantity
-function updateQnty($id,$qnty){
-    $cart = isset($_SESSION['cart'])?$_SESSION['cart']:array();
-
-    foreach($cart as $key => $product){
-        if($product['id'] == $id){
-            $cart[$key]['qnty'] = $qnty;
-            $cart[$key]['tPrice'] = $cart[$key]['qnty'] * $cart[$key]['price'];
-
-            $_SESSION['cart'] = $cart;
-
-            echo json_encode($_SESSION['cart']);
-        }
-    }  
-}
-
-
-
 function onLoad(){
     if(!isset($_SESSION['cart'])){
         echo json_encode($_SESSION['cart']);

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    //display cart product on load event
     $.ajax({
         url: 'config.php',
         method: 'POST',
@@ -9,7 +10,7 @@ $(document).ready(function(){
         displaylist(response);
     });
 
-    
+    //add to cart
     $(document).on('click','#add-to-cart',function(e){
         e.preventDefault();
         $.ajax({
@@ -23,7 +24,7 @@ $(document).ready(function(){
 
     });
 
-
+    //remove product from cart 
     $(document).on('click','#removeProduct',function(e){
         e.preventDefault();
         console.log("remove product"+$(this).data('id'));
@@ -38,7 +39,7 @@ $(document).ready(function(){
 
     });
     
-
+    //display cart product
     function displaylist(response){
         var table ="";
         table += "<table><tr><th>Product Id</th><th>Product Name</th><th>Product Price</th><th>Product Qnty</th><th>Total Price</th><th>Remove</th></tr>";

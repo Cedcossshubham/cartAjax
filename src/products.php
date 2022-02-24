@@ -1,10 +1,7 @@
 <?php 
-    
-	session_start();
-	
-	include "header.php";
+    include "header.php";
 	include "footer.php";
-	include "config.php";	 
+	include "config.php";	
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +19,16 @@
 			<?php echo productListing($products,$row) ?>
 		</div>
 		<div id="cart">
-			<?php echo displayProduct($table) ?>
+			<!-- cart table -->
 			<span id="subtotal">
-				<?php echo "Your Cart Total: ".subTotal($subTotal)?>
+			<!-- subtotal -->
 			</span>
 		</div>
 	</div>	
 	<?php echo $footer ?>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='ajax.js'></script>
 </body>
 </html>
 
